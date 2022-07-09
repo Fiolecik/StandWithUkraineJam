@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackCard : MonoBehaviour
+namespace Cards.Fighting
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "Attack Card" , menuName = "Cards/Fighting/Attack Card")]
+    public class AttackCard : BasicCard
     {
-        
-    }
+        public int damage;
+        public override void SelectCard()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void CastCard(Transform who)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -30,12 +30,7 @@ namespace GameInput
                 }
             }
         }
-
-        private void SelectedCard(RaycastHit rh)
-        {
-            
-        }
-
+        
         private void Normal(RaycastHit rh)
         {
             TourController.Instance.CurrentMoving.EntityController.SetCurrentTarget(Grid.Instance
