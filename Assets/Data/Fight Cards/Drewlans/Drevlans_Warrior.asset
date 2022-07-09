@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Drevlans_Warrior
   m_EditorClassIdentifier: 
   name: Drevlans Warrior
-  description: Unit
+  description: Melee Unit
   Statistics:
     damage: 25
     heal: 25

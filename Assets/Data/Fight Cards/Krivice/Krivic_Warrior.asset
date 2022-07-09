@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Krivic_Warrior
   m_EditorClassIdentifier: 
   name: Krivic Warrior
-  description: Melee Infrantry
+  description: Melee Unit
   Statistics:
     damage: 10
     heal: 25

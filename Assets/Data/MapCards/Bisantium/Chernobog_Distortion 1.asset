@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chernobog_Distortion 1
   m_EditorClassIdentifier: 
   name: Chernobog Distortion
-  description: Deals damage and blocks placing new unit on that place
+  description: Spell
   luckyCost: 400
   resources: 00000000030000000000000000000000
   icon: {fileID: 21300000, guid: ff5b7c6f05e1267409138a87a6f90c0e, type: 3}

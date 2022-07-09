@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lelen
   m_EditorClassIdentifier: 
   name: Lelen
-  description: Slavic Mythological Creature
+  description: Special Melee Unit
   Statistics:
     damage: 75
     heal: 150

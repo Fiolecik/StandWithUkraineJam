@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rusalka
   m_EditorClassIdentifier: 
   name: Rusalka
-  description: Special Unit
+  description: Special Magic Unit
   Statistics:
     damage: 60
     heal: 100

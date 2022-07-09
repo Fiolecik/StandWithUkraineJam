@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crossbowman
   m_EditorClassIdentifier: 
   name: Crossbowman
-  description: Rabge Unit
+  description: Range Unit
   Statistics:
     damage: 60
     heal: 50

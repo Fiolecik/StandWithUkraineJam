@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Belbogs_Ray
   m_EditorClassIdentifier: 
   name: Belbogs Ray
-  description: Ray of Light
+  description: Spell
   damage: 25

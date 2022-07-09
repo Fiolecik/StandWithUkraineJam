@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Krivice_Harpooners 2
   m_EditorClassIdentifier: 
-  name: Harpooners
-  description: Krivice Harpooners
+  name: Krivic Harpooner
+  description: Range Unit
   luckyCost: 50
   resources: 
   icon: {fileID: 21300000, guid: 74a6dbbf74b08bf4baade21337c328f3, type: 3}
