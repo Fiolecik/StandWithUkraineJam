@@ -11,7 +11,7 @@ namespace Game
         public string name;
         public string description;
         public int luckyCost;
-        public int[] resources;
+        public int[] resources = new int[4];
         public Sprite icon;
         public BasicCard basicCard;
     }

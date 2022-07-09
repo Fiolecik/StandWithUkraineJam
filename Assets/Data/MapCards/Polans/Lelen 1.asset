@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Lelen
   description: Mystican Slavian Creature
   luckyCost: 400
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: e62b86d313713104f90bd4297b3ab6b6, type: 3}
   basicCard: {fileID: 0}

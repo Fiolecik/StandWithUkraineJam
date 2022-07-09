@@ -19,7 +19,6 @@ namespace GameInput
                 return;
             if (TourController.Instance.CPU)
                 return;
-            Debug.Log("XD");
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rh;
 
