@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Lisovyok
   description: Mystican Slavian Creature
   luckyCost: 400
-  resources: 
+  resources: 00000000000000000300000000000000
   icon: {fileID: 21300000, guid: 3dad26d004d8af64aa7db7390733ef7b, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: da8472c36bbc07148894547fd4478fe6, type: 2}

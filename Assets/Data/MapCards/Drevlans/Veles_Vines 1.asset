@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Veles Vines
   description: Block a unit and damage it and surrounding unit
   luckyCost: 200
-  resources: 00000000000000000000000000000000
+  resources: 00000000000000000100000000000000
   icon: {fileID: 21300000, guid: 67ac12cb22aec874586617d038fbf3fe, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: 8dcc7fa4a3953354fafe8a258467e017, type: 2}
