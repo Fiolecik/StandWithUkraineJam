@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Protection 2
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  luckyCost: 0
+  name: Protection
+  description: Bareer Spell
+  luckyCost: 350
   resources: 
   icon: {fileID: 0}
   basicCard: {fileID: 0}
