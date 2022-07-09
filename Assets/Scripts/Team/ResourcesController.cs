@@ -7,8 +7,6 @@ using UnityEngine;
 
 namespace Team
 {
-
-
     public class ResourcesController : MonoBehaviour
     {
         public int CurrentLucky
