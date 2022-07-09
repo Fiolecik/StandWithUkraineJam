@@ -7,18 +7,11 @@ public class Pathfinding : SingletonMonoBehaviour<Pathfinding>
 {
     private Grid grid;
 
-    public Transform t1, t2;
-
     private void Awake()
     {
         grid = GetComponent<Grid>();
     }
-
-    // private void Update()
-    // {
-    //     FindPath(t1.position, t2.position);
-    // }
-
+    
     public void FindPath(Vector3 startPos, Vector3 targetPos)
     {
         var startNode = grid.NodeFromWorldPoint(startPos);

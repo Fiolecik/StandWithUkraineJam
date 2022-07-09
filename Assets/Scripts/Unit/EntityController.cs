@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Game;
+using Interfaces;
 using UnityEngine;
 
-public class EntityController : MonoBehaviour
+public class EntityController : MonoBehaviour, ITourListener
 {
     [SerializeField] private int maxMoves;
     
@@ -18,23 +20,9 @@ public class EntityController : MonoBehaviour
     private void Awake()
     {
         currentMoves = maxMoves;
+        TourController.Instance.AddTourListener(this);
     }
-
-    private void OnDrawGizmos()
-    {
-        Vector2 position = transform.position;
-        // for (int i = currentPosition; i < currentRoad.Count; i++)
-        // {
-        //     Gizmos.DrawLine(position, currentRoad[i]);
-        //     position = currentRoad[i];
-        // }
-    }
-
-    public void NewTour()
-    {
-        currentMoves = maxMoves;
-    }
-
+    
     public void SetCurrentTarget(Vector3 position)
     {
         if (coroutineIsRun)
@@ -46,15 +34,12 @@ public class EntityController : MonoBehaviour
         
         if (currentRoad.Count == 0 || currentRoad[currentRoad.Count - 1].worldPosition != position)
         {
-            
             currentTarget = position;
             Pathfinding.Instance.FindPath(transform.position, currentTarget);
             currentRoad = Grid.Instance.path;
-
         }
         else
         {
-            Debug.Log("XD");
             StartCoroutine(StartMove());
         }
     }
@@ -65,25 +50,11 @@ public class EntityController : MonoBehaviour
         currentRoad.Clear();
     }
 
-    // public Vector2[] GetRoad()
-    // {
-    //     return currentRoad.ToArray();
-    // }
-
-    // private void CalculateRoad()
-    // {
-    //     ClearRoad();
-    //     Vector2Int currentPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y)-new Vector2Int(1, 0);
-    //
-    //     while (currentPosition!= currentTarget)
-    //     {
-    //         Vector2Int dir = (currentTarget - currentPosition);
-    //         dir = new Vector2Int(Mathf.Clamp(dir.x, -1, 1), Mathf.Clamp(dir.y, -1, 1));
-    //         currentPosition += dir;
-    //         currentRoad.Add(currentPosition);
-    //     }
-    // }
-
+    public Node[] GetRoad()
+    {
+        return currentRoad.ToArray();
+    }
+    
     private void ClearRoad()
     {
         currentRoad.Clear();
@@ -139,5 +110,10 @@ public class EntityController : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(0.5f);
+    }
+
+    public void OnTourEnd()
+    {
+        currentMoves = maxMoves;
     }
 }
