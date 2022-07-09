@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
-  m_Name: Protection 2
+  m_Script: {fileID: 11500000, guid: 466e8840e8e24ab48a00706659025703, type: 3}
+  m_Name: Protection
   m_EditorClassIdentifier: 
   name: Protection
-  description: Bareer Spell
-  luckyCost: 350
-  resources: 00000000010000000000000000000000
-  icon: {fileID: 0}
-  basicCard: {fileID: 11400000, guid: 02e56e09b483bad4f89c97e2eb6cd3ee, type: 2}
+  description: Adds a DEF
+  Statistics:
+    damage: 0
+    heal: 0
+    def: 10

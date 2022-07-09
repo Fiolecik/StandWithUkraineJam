@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f33e3a66b387734b9b5960818859f8b, type: 3}
   m_Name: Belbogs_Ray
   m_EditorClassIdentifier: 
   name: Belbogs Ray
-  description: Ray of the Light
-  luckyCost: 200
-  resources: 00000000000000000000000000000000
-  icon: {fileID: 21300000, guid: 219a1fec65aa0e943be8c61eeeb04846, type: 3}
-  basicCard: {fileID: 11400000, guid: aa2159d4b7fd05940a3c351a544e58fc, type: 2}
+  description: Ray of Light
+  damage: 25
