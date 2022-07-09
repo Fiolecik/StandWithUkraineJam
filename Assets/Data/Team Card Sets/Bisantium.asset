@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2b821afc7847742989f1d91e8f53f3, type: 3}
+  m_Name: Bisantium
+  m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 11400000, guid: 1805a2331a863e24e893bd9d8ea85a37, type: 2}
+  - {fileID: 11400000, guid: 1ff1f06a928197f4e918e4ed0518d006, type: 2}
+  - {fileID: 11400000, guid: ef68954017c5d414aaab7d564f42f769, type: 2}
+  - {fileID: 11400000, guid: 9c25b89cabf073e4dae0706a7cb1d76d, type: 2}
+  - {fileID: 11400000, guid: 49336089f1f6444458c045a4a2afce82, type: 2}
+  - {fileID: 11400000, guid: 3ca6eb2e2468b2445a502cfba6069f76, type: 2}
+  - {fileID: 11400000, guid: 37710278b755d7f4f9584e3f977aa4e0, type: 2}
+  - {fileID: 11400000, guid: aa94ed0f8caba384990d3491e38404de, type: 2}
+  - {fileID: 11400000, guid: d0083c982fe66d343a788d602bc6951c, type: 2}
+  - {fileID: 11400000, guid: 05588e0dc71cd924a860bc33cffea7f3, type: 2}
+  - {fileID: 11400000, guid: c3d6af86b9468c246b35badcf5460a85, type: 2}
+  - {fileID: 11400000, guid: 4a04d2861400e3940b2a6e1c0590b7d5, type: 2}
+  - {fileID: 11400000, guid: f252bf7960a2850468580143dc688ad7, type: 2}
+  - {fileID: 11400000, guid: ba918b0dd962adc4db95bd643e687374, type: 2}
+  - {fileID: 11400000, guid: 47329fab66312634bb2218d50804bb9c, type: 2}
+  - {fileID: 11400000, guid: 3a1e427a3ea42f24e8fc010aecd34dab, type: 2}
