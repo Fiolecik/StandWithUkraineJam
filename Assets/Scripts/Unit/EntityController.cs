@@ -31,6 +31,11 @@ public class EntityController : MonoBehaviour, ITourListener
             currentTarget = position;
             return;
         }
+
+        if (currentRoad == null)
+        {
+            currentRoad = new List<Node>();
+        }
         
         if (currentRoad.Count == 0 || currentRoad[currentRoad.Count - 1].worldPosition != position)
         {

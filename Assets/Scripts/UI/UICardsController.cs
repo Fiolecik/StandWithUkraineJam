@@ -35,7 +35,6 @@ namespace UI.Map
         private void UpdateCards()
         {
             int cardsLenght = cardMaps.Count;
-            Debug.Log("XD");
             if (cardsLenght> currentTour.CardSet.cards.Length)
             {
                 for (int i = 0; i < cardsLenght - currentTour.CardSet.cards.Length; i++)
@@ -43,7 +42,6 @@ namespace UI.Map
                     Destroy(cardMaps[i]);
                 }
             }
-            Debug.Log(currentTour.CardSet.cards.Length);
             if (cardsLenght < currentTour.CardSet.cards.Length)
             {
                 for (int i = 0; i < currentTour.CardSet.cards.Length-cardsLenght; i++)

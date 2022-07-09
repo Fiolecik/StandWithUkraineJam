@@ -10,8 +10,7 @@ namespace Cards.Fighting
         friendUnit,
         enemyUnit
     }
-
-    [CreateAssetMenu(fileName = "Fight Card", menuName = "Cards/Fight Card")]
+    
     public class BasicCard : ScriptableObject
     {
         public string name;
