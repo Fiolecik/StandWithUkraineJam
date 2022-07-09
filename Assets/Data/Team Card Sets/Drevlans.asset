@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2b821afc7847742989f1d91e8f53f3, type: 3}
+  m_Name: Drevlans
+  m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 11400000, guid: 10d7611b59f648d48bcadb9dd7fb9ee2, type: 2}
+  - {fileID: 11400000, guid: 30645e7ad92bcd943aa792dc79bf7654, type: 2}
+  - {fileID: 11400000, guid: 736c30df110c3d34e8023d04a29f6fc3, type: 2}
+  - {fileID: 11400000, guid: 8d13abbd20534d54580b75ca4dfe8c33, type: 2}
+  - {fileID: 11400000, guid: 109bffdcd793da44cb2fbea1656b6877, type: 2}
+  - {fileID: 11400000, guid: 0e14af1be985c5e4a93e91cea0ff53f9, type: 2}
+  - {fileID: 11400000, guid: 8b93367024865b94f8c7a9a5747240c7, type: 2}
+  - {fileID: 11400000, guid: 1efba091576e15043b9f3c9ea65c21c1, type: 2}
+  - {fileID: 11400000, guid: 21c09cc1c3c834b4da6a558cc19b4762, type: 2}
+  - {fileID: 11400000, guid: cd1916b532594e24ab9a1e6a4d80444c, type: 2}
+  - {fileID: 11400000, guid: 3e52a22867add3a4d9df241162834625, type: 2}
+  - {fileID: 11400000, guid: 0893c61e30eac1e4cbf37972420e8eb3, type: 2}
+  - {fileID: 11400000, guid: ee014350bb5f0ba47aeefc899cb5cd06, type: 2}
+  - {fileID: 11400000, guid: c429eba070c94154eaaed0a9a4f643a5, type: 2}
