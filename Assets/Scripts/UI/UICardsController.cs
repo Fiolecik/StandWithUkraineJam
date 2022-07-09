@@ -56,27 +56,9 @@ namespace UI.Map
             for (int i = 0; i < cardMaps.Count; i++)
             {
                 cardMaps[i].SetCard(currentTour.CardSet.cards[i]);
-            }
-
-            StartCoroutine(LerpPositions());
-        }
-
-        private IEnumerator LerpPositions()
-        {
-            float delta = 0;
-            List<Vector3> positions = new List<Vector3>();
-            for (int i = 0; i < cardMaps.Count; i++)
-            {
-                positions.Add(cardMaps[i].transform.position);
-            }
-            while (delta<1)
-            {
-                yield return null;
-                delta += Time.deltaTime;
-                for (int i = 0; i < cardMaps.Count; i++)
-                {
-                    cardMaps[i].transform.position = Vector3.Lerp(positions[i], transform.position+new Vector3(distanceBeetwenCards*i,0,0), delta);
-                }
+                cardMaps[i].IsPosibleToSelect = false;
+                cardMaps[i].DefaultPosition = transform.position+Vector3.right*distanceBeetwenCards*i;
+                cardMaps[i].LerpToBasicPosition();
             }
         }
     }

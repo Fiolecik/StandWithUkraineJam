@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TemplateInput : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class TemplateInput : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current.currentSelectedGameObject != null)
+            return;
         if (Input.GetMouseButtonDown(0))
         {
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);

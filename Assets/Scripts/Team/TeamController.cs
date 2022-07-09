@@ -39,10 +39,13 @@ namespace Team
         public void SelectCard(Card card)
         {
             if (!resourcesController.CanRemoveLucky(card.luckyCost))
+            {
                 return;
+            }
+
             for (int i = 0; i < 4; i++)
             {
-                if(!resourcesController.HasResource((PlayerResource)i+2, card.resources[i] ))
+                if(!resourcesController.HasResource((PlayerResource)i, card.resources[i] ))
                 {
                     return;
                 }
