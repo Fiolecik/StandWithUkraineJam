@@ -19,14 +19,6 @@ namespace GameInput
                 return;
             if (TourController.Instance.CPU)
                 return;
-            if (TourController.Instance.CurrentMoving.SelectedCard)
-            {
-                // highlighting unit and base
-            }
-            else
-            {
-                
-            }
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rh;
 

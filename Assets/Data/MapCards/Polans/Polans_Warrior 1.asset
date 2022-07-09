@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Warriors
   description: Brave Polan Warriors
   luckyCost: 25
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 1e574b0d79416c542af3046712d2eab0, type: 3}
   basicCard: {fileID: 0}

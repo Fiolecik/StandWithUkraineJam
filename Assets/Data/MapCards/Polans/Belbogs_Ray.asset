@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Belbogs Ray
   description: Ray of the Light
   luckyCost: 200
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 219a1fec65aa0e943be8c61eeeb04846, type: 3}
   basicCard: {fileID: 0}

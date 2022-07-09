@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Archer
   description: Polans Archers
   luckyCost: 50
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 351fa6f507423af4db768d588f99e9f5, type: 3}
   basicCard: {fileID: 0}

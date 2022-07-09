@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grid : SingletonMonoBehaviour<Grid>
 {
     public LayerMask unwalkableMask;
+    public LayerMask groundMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
 
@@ -48,9 +49,21 @@ public class Grid : SingletonMonoBehaviour<Grid>
         {
             var worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) +
                              Vector3.forward * (y * nodeDiameter + nodeRadius);
-            var walkable = !Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask);
-            grid[x, y] = new Node(walkable, worldPoint, x, y);
+            Vector3 pos = GetGroundPoint(worldPoint);
+            var walkable = !Physics.CheckSphere(pos, nodeRadius, unwalkableMask);
+            grid[x, y] = new Node(walkable, pos, x, y);
         }
+    }
+
+    private Vector3 GetGroundPoint(Vector3 atVector)
+    {
+        RaycastHit rh;
+        if (Physics.Raycast(atVector, -Vector3.up, out rh, groundMask))
+        {
+            return rh.point+Vector3.up*0.5f;
+        }
+
+        return Vector3.zero;
     }
 
     public List<Node> GetNeighbours(Node node)

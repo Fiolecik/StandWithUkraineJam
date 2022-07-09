@@ -11,7 +11,6 @@ namespace Unit
 {
     public class EntityActions : MonoBehaviour
     {
-        
         public bool IsPossibleAttack { get; private set; }
         public bool IsPossibleTakeOverStruct { get; private set; }
         public  bool IsPossibleChangeResource { get; private set; }
