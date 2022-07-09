@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Protection
   description: Bareer Spell
   luckyCost: 350
-  resources: 00000000000000000000000000000000
+  resources: 00000000010000000000000000000000
   icon: {fileID: 0}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: 02e56e09b483bad4f89c97e2eb6cd3ee, type: 2}

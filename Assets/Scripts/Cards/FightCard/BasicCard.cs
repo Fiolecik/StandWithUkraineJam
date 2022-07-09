@@ -11,19 +11,15 @@ namespace Cards.Fighting
         enemyUnit
     }
     
-    public class BasicCard : ScriptableObject
+    public abstract class BasicCard : ScriptableObject
     {
         public string name;
         public string description;
-        
-        public virtual void SelectCArd()
-        {
-            
-        }
 
-        public virtual void CastCard(Transform who)
-        {
-            
-        }
+        public ActiveTypeCard ActiveTypeCard { get; set; }
+
+        public abstract void SelectCard();
+
+        public abstract void CastCard(Transform who);
     }
 }

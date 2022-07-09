@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using UnityEngine;
 
-public class BuffCard : MonoBehaviour
+namespace Cards.Fighting
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "Attack Card" , menuName = "Cards/Fighting/Buff card")]
+    public class BuffCard : BasicCard
     {
-        
-    }
+        public Statistics Statistics;
+        public override void SelectCard()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void CastCard(Transform who)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

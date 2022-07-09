@@ -17,4 +17,4 @@ MonoBehaviour:
   luckyCost: 400
   resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: e62b86d313713104f90bd4297b3ab6b6, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: e7b68c3509c4a304d99111aced6624e0, type: 2}
