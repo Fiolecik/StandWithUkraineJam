@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Q
-  - W
+  - StructLayer
+  - EntityLayer
   - UnwalkableMask
   - R
   - T

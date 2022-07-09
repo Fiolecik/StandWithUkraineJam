@@ -5,22 +5,44 @@ using Cards;
 using Game;
 using Interfaces;
 using Other;
+using Unit;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Team
 {
     public class TeamController : MonoBehaviour
     {
+        public UnityEvent OnTeamChangedCard = new UnityEvent();
         public string Name { get; set; }
+        public int TeamId { get; set; }
         public TeamCardSet CardSet
         {
             get => cardSet;
         }
+
+        public EntityActions SpawnedUnit
+        {
+            get => spawnedUnit;
+        }
+
+        public EntityController EntityController
+        {
+            get => entityController;
+        }
+
+        private EntityController entityController;
+        private EntityActions spawnedUnit;
         public ResourcesController ResourcesController { get => resourcesController; }
 
         public Card SelectedCard
         {
             get => selectedCard;
+        }
+
+        public Transform Spawn
+        {
+            get => spawn;
         }
 
         private Card selectedCard;
@@ -29,11 +51,19 @@ namespace Team
 
         private ResourcesController resourcesController;
         [SerializeField] private TeamCardSet cardSet;
+        [SerializeField] private GameObject player;
+        [SerializeField] private Transform spawn;
         
         private void Awake()
         {
             resourcesController = GetComponent<ResourcesController>();
             TourController.Instance.AddTeam(this);
+            GameObject g = Instantiate(player);
+            g.transform.position = spawn.transform.position;
+            spawnedUnit = g.GetComponent<EntityActions>();
+            entityController = g.GetComponent<EntityController>();
+            g.GetComponent<UnitController>().TeamParrent = this;
+            GetComponent<UnitController>().TeamParrent = this;
         }
 
         public void SelectCard(Card card)
@@ -51,11 +81,13 @@ namespace Team
                 }
             }
             selectedCard = card;
+            OnTeamChangedCard.Invoke();
         }
 
         public void DeselectCard()
         {
             selectedCard = null;
+            OnTeamChangedCard.Invoke();
         }
 
         public void CastCard(Transform who)
@@ -64,7 +96,7 @@ namespace Team
                 return;
             for (int i = 0; i < 4; i++)
             {
-                if(!resourcesController.HasResource((PlayerResource)i+2, selectedCard.resources[i] ))
+                if(!resourcesController.HasResource((PlayerResource)i, selectedCard.resources[i] ))
                 {
                     return;
                 }
@@ -72,6 +104,8 @@ namespace Team
 
             resourcesController.RemoveLucky(selectedCard.luckyCost);
             who.GetComponent<UnitController>().AddCard(selectedCard.basicCard);
+            selectedCard = null;
+            OnTeamChangedCard.Invoke();
         }
     }
 }

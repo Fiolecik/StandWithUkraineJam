@@ -26,7 +26,7 @@ namespace World
 
         public void TakeOverControll(TeamController teamController)
         {
-            if (!IsPossibleToTakeOVerControll(teamController))
+            if (!IsPossibleToTakeOverControll(teamController))
                 return;
             if(currentTeam!=null)
                 currentTeam.ResourcesController.RemoveResource(currentResource, specialResources);
@@ -35,9 +35,14 @@ namespace World
             currentTeam.ResourcesController.AddResource(currentResource, specialResources);
         }
 
-        public bool IsPossibleToTakeOVerControll(TeamController teamController)
+        public bool IsPossibleToTakeOverControll(TeamController teamController)
         {
             return teamController != currentTeam;
+        }
+
+        public bool IsPossibleToSetSpecialResource()
+        {
+            return currentResource != PlayerResource.none && currentResource != PlayerResource.lucky;
         }
 
         public void SetSpecialResource(PlayerResource playerResource)

@@ -40,22 +40,6 @@ namespace Game
         private List<ITourListener> tourListeners = new List<ITourListener>();
 
         private int currentIdTeam = 0;
-        private void Awake()
-        {
-            
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void AddTeam(TeamController teamController)
         {
