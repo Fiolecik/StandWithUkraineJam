@@ -5,12 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
- public void PlayGame()
+    [SerializeField] private GameObject mapPanel;
+    [SerializeField] private GameObject authorPanel;
+    [SerializeField] private GameObject menuPanel;
+
+    public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-public void QuitGame()
+    private void TurnOffAll()
+    {
+        mapPanel.SetActive(false);
+        authorPanel.SetActive(false);
+        menuPanel.SetActive(false);
+    }
+
+    public void ShowMap()
+    {
+        TurnOffAll();
+        mapPanel.SetActive(true);
+    }
+
+    public void ShowMenu()
+    {
+        TurnOffAll();
+        menuPanel.SetActive(true);
+    }
+
+    public void ShowAuthor()
+    {
+        TurnOffAll();
+        authorPanel.SetActive(true);
+    }
+
+    public void QuitGame()
     {
         Application.Quit();
     }
