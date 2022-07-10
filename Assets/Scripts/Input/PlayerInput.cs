@@ -16,7 +16,7 @@ namespace GameInput
 
         void Update()
         {
-            if (EventSystem.current.currentSelectedGameObject != null)
+            if (EventSystem.current.IsPointerOverGameObject())
                 return;
             if (TourController.Instance.CPU)
                 return;
