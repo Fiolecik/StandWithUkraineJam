@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: acb2b363eaada0c45a12be78502764be
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Caltons Typeface
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a3a3a230e95d5cf4ebe52f19424b0199, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
