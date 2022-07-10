@@ -37,11 +37,17 @@ namespace UI
 
             description.text = card.description;
             name.text = card.name;
-            var basicCard = card.basicCard;
-            
-                hp.text = basicCard.GetStatistics().heal.ToString();
-                def.text =basicCard.GetStatistics().def.ToString();
-                attack.text = basicCard.GetStatistics().damage.ToString();
+            if (card != null)
+            {
+                var basicCard = card.basicCard;
+
+                if (basicCard != null)
+                {
+                    hp.text = basicCard.GetStatistics().heal.ToString();
+                    def.text = basicCard.GetStatistics().def.ToString();
+                    attack.text = basicCard.GetStatistics().damage.ToString();
+                }
+            }
 
         }
 

@@ -644,6 +644,9 @@ MonoBehaviour:
   - {fileID: 2666845022406093085}
   description: {fileID: 2666845024058036340}
   name: {fileID: 2666845023999595822}
+  hp: {fileID: 0}
+  def: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!114 &5124458538528547790
 MonoBehaviour:
   m_ObjectHideFlags: 0
