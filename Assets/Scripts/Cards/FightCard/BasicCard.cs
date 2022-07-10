@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 namespace Cards.Fighting
@@ -13,13 +14,14 @@ namespace Cards.Fighting
     
     public abstract class BasicCard : ScriptableObject
     {
-        public string name;
-        public string description;
+        public string name { get; set; }
+        public string description { get; set; }
+        public Sprite sprite { get; set; }
 
         public ActiveTypeCard ActiveTypeCard { get; set; }
 
         public abstract void SelectCard();
 
-        public abstract void CastCard(Transform who);
+        public abstract void CastCard(UICardSlot who);
     }
 }
