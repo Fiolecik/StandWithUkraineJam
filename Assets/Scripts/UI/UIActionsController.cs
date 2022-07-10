@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Fighting;
+using Game;
 using Other;
 using Unit;
 using UnityEngine;
@@ -20,7 +21,9 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
-            last = FightController.Instance.CurrentMoving.TeamParrent.EntityController
+            if (TourController.Instance.CurrentMoving == null)
+                return;
+            last = TourController.Instance.CurrentMoving.SpawnedUnit
                 .GetComponent<EntityActions>();
             attackButton.SetActive(last.IsPossibleAttack);
             takeOverControllButton.SetActive(last.IsPossibleTakeOverStruct);
