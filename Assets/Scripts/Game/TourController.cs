@@ -42,6 +42,11 @@ namespace Game
             teamController.Name = "Player_" + teams.Count + "_" + (teamController.CPU ? "CPU" : "User");
         }
 
+        public void RemoveTeam(TeamController teamController)
+        {
+            teams.Remove(teamController);
+        }
+
         public void AddTourListener(ITourListener tourListener)
         {
             tourListeners.Add(tourListener);
@@ -55,7 +60,6 @@ namespace Game
         private void NextTeam()
         {
             currentIdTeam++;
-            Debug.Log("XD");
             if (currentIdTeam >= teams.Count)
             {
                 currentIdTeam = 0;

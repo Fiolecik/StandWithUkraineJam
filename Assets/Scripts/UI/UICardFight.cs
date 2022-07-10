@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cards.Fighting;
@@ -19,7 +20,19 @@ public class UICardFight : MonoBehaviour
         private BasicCard card;
         private bool followCard = false;
         private bool lerping = false;
-        
+
+        private void Update()
+        {
+            if (FightController.Instance.SelectedCard == this)
+            {
+                transform.position = DefaultPosition - Vector3.right * 300;
+            }
+            else
+            {
+                transform.position = DefaultPosition;
+            }
+        }
+
         public void SetCard(BasicCard basicCard)
         {
             card = basicCard;
@@ -33,9 +46,7 @@ public class UICardFight : MonoBehaviour
         {
             if (FightController.Instance.CurrentMoving.TeamParrent.CPU)
                 return;
-            transform.position = DefaultPosition - Vector3.right * 300;
             // StartCoroutine(LerpToPosition(DefaultPosition - Vector3.right * 300));
-            StartCoroutine(FollowCard());
             FightController.Instance.SelectCard(card);
         }
 
@@ -43,38 +54,5 @@ public class UICardFight : MonoBehaviour
         {
             transform.position = DefaultPosition;
             // StartCoroutine(LerpToPosition(DefaultPosition));
-        }
-
-        private IEnumerator LerpToPosition(Vector3 position)
-        {
-            if (lerping)
-                yield break;
-            lerping = true;
-            float delta = 0;
-            Vector3 startPosition = transform.position;
-            while (delta < 1)
-            {
-                yield return null;
-                delta += Time.deltaTime;
-                transform.position = Vector3.Lerp(startPosition, position, delta);
-            }
-
-            lerping = false;
-        }
-        
-        private IEnumerator FollowCard()
-        {
-            while (followCard)
-            {
-                yield return null;
-                if (FightController.Instance.SelectedCard != card)
-                {
-                    lerping = false;
-                    StopAllCoroutines();
-                    LerpToBasicPosition();
-                    followCard = false;
-                    count.text = FightController.Instance.CurrentMoving.Cards.Find(ctg => ctg.basicCard == card).countOfCards.ToString();
-                }
-            }
         }
 }

@@ -66,16 +66,8 @@ namespace UI
             if (FightController.Instance.SelectedCard == null)
                 return;
             Image target = feedback;
-            if (cardIcon.gameObject.activeInHierarchy)
-            {
-                target = cardIcon;
-            }
-            if (FightController.Instance.Tour != team)
-            {
-                target.color = cant;
-                return;
-            }
             
+
             // karta atak i wrog team
             // karta atak i swoj team
             // karta buff i soj team
@@ -88,40 +80,63 @@ namespace UI
             var currentCard = FightController.Instance.SelectedCard;
             if (currentCard.ActiveTypeCard != ActiveTypeCard.map && unitCard==null)
             {
+                target.color = cant;
+                cardIcon.color = cant;
                 return;
             }
             
             if (currentCard.ActiveTypeCard == ActiveTypeCard.enemyUnit && team != FightController.Instance.Tour && unitCard!=null)
             {
                 target.color = possible;
+                cardIcon.color = possible;
                 return;
             }
             if (currentCard.ActiveTypeCard == ActiveTypeCard.enemyUnit && team == FightController.Instance.Tour)
             {
                 target.color = cant;
+                cardIcon.color = cant;
                 return;
             }
             
             if (currentCard.ActiveTypeCard == ActiveTypeCard.friendUnit && team != FightController.Instance.Tour)
             {
                 target.color = cant;
+                cardIcon.color = cant;
                 return;
             }
             if (currentCard.ActiveTypeCard == ActiveTypeCard.friendUnit && team == FightController.Instance.Tour && unitCard!=null)
             {
                 target.color = possible;
+                cardIcon.color = possible;
                 return;
             }
 
             if (currentCard.ActiveTypeCard == ActiveTypeCard.map && team == FightController.Instance.Tour)
             {
                 target.color = unitCard == null ? possible : cant;
+                cardIcon.color = unitCard == null ? possible : cant;
             }
+            // if (currentCard.ActiveTypeCard == ActiveTypeCard.map && unitCard == null &&
+            //     team == FightController.Instance.Tour)
+            // {
+            //     target.color = possible;
+            // }
+            //
+            // if (currentCard.ActiveTypeCard == ActiveTypeCard.enemyUnit && unitCard != null &&
+            //     team != FightController.Instance.Tour)
+            // {
+            //     target.color = possible;
+            // }
+            //
+            // if (currentCard.ActiveTypeCard == ActiveTypeCard.friendUnit && unitCard != null &&
+            //     team == FightController.Instance.Tour)
+            // {
+            //     target.color = possible;
+            // }
         }
 
         private void ColorSlotFromUnit()
         {
-            cardIcon.color = normal;
             if (FightController.Instance.SelectedUnit == null)
                 return;
             if (FightController.Instance.SelectedUnit == this)

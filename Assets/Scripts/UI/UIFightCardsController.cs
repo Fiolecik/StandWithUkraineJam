@@ -57,8 +57,6 @@ namespace UI
                 cardMaps[i].StopAllCoroutines();
                 cardMaps[i].LerpToBasicPosition();
             }
-            Debug.Log(cardMaps.Count);
-            Debug.Log(currentTour.Cards.Count);
         }
     }
 }
