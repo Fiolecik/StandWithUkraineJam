@@ -43,7 +43,7 @@ namespace Team
 
         public bool CanRemoveLucky(int value)
         {
-            return value <= baseLucky;
+            return value <= currentLucky;
         }
 
         public void AddResource(PlayerResource playerResource, int value)

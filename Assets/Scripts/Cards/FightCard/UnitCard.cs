@@ -31,12 +31,22 @@ namespace Cards.Fighting
             {
                 FightController.Instance.CurrentMoving.RemoveCard(this);
                 who.SetUnitCard(this);
+                FightController.Instance.UsedCard();
+            }
+            else
+            {
+                FightController.Instance.DeselectCard();
             }
         }
 
         public void Attack(UICardSlot who)
         {
-            who.UnitCard.Statistics.heal -= (Statistics.damage - who.UnitCard.Statistics.def);
+            if (who.UnitCard == null)
+            {
+                FightController.Instance.DeselectCard();
+                return;
+            }
+                who.UnitCard.Statistics.heal -= (Statistics.damage - who.UnitCard.Statistics.def);
             if (who.UnitCard.Statistics.heal <= 0)
             {
                 who.RemoveUnitCard();

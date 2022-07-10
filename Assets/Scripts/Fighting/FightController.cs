@@ -25,21 +25,26 @@ namespace Fighting
         {
             get=>selectedCard;
         }
+
+        public UICardSlot SelectedUnit
+        {
+            get => selectedUnit;
+        }
         
         public UnitController[] Fighters = new UnitController[2];
         
         [SerializeField] private GameObject battleMap;
-        [SerializeField] private UnitController oneplayer, twoplayer;
-        
+
         private int tour = 0;
         private BasicCard selectedCard;
-        private UnitCard selectedUnit;
+        private UICardSlot selectedUnit;
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                StartFight(oneplayer,twoplayer);
+                UnitController[] uc = FindObjectsOfType<UnitController>();
+                StartFight(uc[0],uc[1]);
             }
         }
 
@@ -54,13 +59,14 @@ namespace Fighting
         {
             if (team == tour)
             {
-                selectedUnit = unitCard.UnitCard;
+                selectedUnit = unitCard;
+                selectedCard = null;
             }
             else
             {
                 if (selectedUnit != null)
                 {
-                    selectedUnit.Attack(unitCard);
+                    selectedUnit.UnitCard.Attack(unitCard);
                 }
             }
         }
@@ -68,10 +74,18 @@ namespace Fighting
         public void SelectCard(BasicCard basicCard)
         {
             selectedCard = basicCard;
+            selectedUnit = null;
         }
 
+        public void DeselectCard()
+        {
+            selectedCard = null;
+            selectedUnit = null;
+        }
+        
         public void UsedCard()
         {
+            DeselectCard();
             NextTour();
         }
 

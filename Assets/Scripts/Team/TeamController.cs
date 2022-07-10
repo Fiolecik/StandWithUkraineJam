@@ -68,18 +68,18 @@ namespace Team
 
         public void SelectCard(Card card)
         {
-            if (!resourcesController.CanRemoveLucky(card.luckyCost))
-            {
-                return;
-            }
-
-            for (int i = 0; i < 4; i++)
-            {
-                if(!resourcesController.HasResource((PlayerResource)i, card.resources[i] ))
-                {
-                    return;
-                }
-            }
+            // if (!resourcesController.CanRemoveLucky(card.luckyCost))
+            // {
+            //     return;
+            // }
+            //
+            // for (int i = 0; i < 4; i++)
+            // {
+            //     if(!resourcesController.HasResource((PlayerResource)i, card.resources[i] ))
+            //     {
+            //         return;
+            //     }
+            // }
             selectedCard = card;
             OnTeamChangedCard.Invoke();
         }
@@ -92,15 +92,15 @@ namespace Team
 
         public void CastCard(Transform who)
         {
-            if (!resourcesController.CanRemoveLucky(selectedCard.luckyCost))
-                return;
-            for (int i = 0; i < 4; i++)
-            {
-                if(!resourcesController.HasResource((PlayerResource)i, selectedCard.resources[i] ))
-                {
-                    return;
-                }
-            }
+            // if (!resourcesController.CanRemoveLucky(selectedCard.luckyCost))
+            //     return;
+            // for (int i = 0; i < 4; i++)
+            // {
+            //     if(!resourcesController.HasResource((PlayerResource)i, selectedCard.resources[i] ))
+            //     {
+            //         return;
+            //     }
+            // }
 
             resourcesController.RemoveLucky(selectedCard.luckyCost);
             var basicCard = selectedCard.basicCard;

@@ -23,13 +23,23 @@ namespace Cards.Fighting
         public override void CastCard(UICardSlot who)
         {
             if (who.UnitCard == null)
+            {
+                FightController.Instance.DeselectCard();
                 return;
+            }
+
+            if (who.Team == FightController.Instance.Tour)
+            {
+                FightController.Instance.DeselectCard();
+                return;
+            }
 
             who.UnitCard.Statistics.heal -= (damage - who.UnitCard.Statistics.def);
             if (who.UnitCard.Statistics.heal <= 0)
             {
                 who.RemoveUnitCard();
             }
+            FightController.Instance.CurrentMoving.RemoveCard(this);
             FightController.Instance.UsedCard();
         }
     }

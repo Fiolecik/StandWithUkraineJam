@@ -26,19 +26,23 @@ public class UICardFight : MonoBehaviour
             cardIcon.sprite = basicCard.sprite;
             name.text = basicCard.name;
             count.text = FightController.Instance.CurrentMoving.Cards.Find(ctg => ctg.basicCard == basicCard).countOfCards.ToString();
+            description.text = FightController.Instance.CurrentMoving.Cards.Find(ctg => ctg.basicCard == basicCard).basicCard.description;
         }
 
         public void SelectCard()
         {
-            if (!FightController.Instance.CurrentMoving.TeamParrent.CPU)
+            if (FightController.Instance.CurrentMoving.TeamParrent.CPU)
                 return;
-            StartCoroutine(LerpToPosition(DefaultPosition + Vector3.forward * 300));
+            transform.position = DefaultPosition - Vector3.right * 300;
+            // StartCoroutine(LerpToPosition(DefaultPosition - Vector3.right * 300));
             StartCoroutine(FollowCard());
+            FightController.Instance.SelectCard(card);
         }
 
         public void LerpToBasicPosition()
         {
-            StartCoroutine(LerpToPosition(DefaultPosition));
+            transform.position = DefaultPosition;
+            // StartCoroutine(LerpToPosition(DefaultPosition));
         }
 
         private IEnumerator LerpToPosition(Vector3 position)

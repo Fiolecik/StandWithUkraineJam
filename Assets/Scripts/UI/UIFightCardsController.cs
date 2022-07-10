@@ -36,30 +36,29 @@ namespace UI
         private void UpdateCards()
         {
             int cardsLenght = cardMaps.Count;
-            if (cardsLenght > currentTour.Cards.Count)
+            
+            for (int i = 0; i < cardsLenght - currentTour.Cards.Count; i++)
             {
-                for (int i = 0; i < cardsLenght - currentTour.Cards.Count; i++)
-                {
-                    Destroy(cardMaps[i]);
-                }
+                Destroy(cardMaps[0].gameObject);
+                cardMaps.RemoveAt(0);
+            }
+            
+            for (int i = 0; i < currentTour.Cards.Count - cardsLenght; i++)
+            {
+                UICardFight g = Instantiate(cardPrefab, transform).GetComponent<UICardFight>();
+                cardMaps.Add(g);
             }
 
-            if (cardsLenght < currentTour.Cards.Count)
-            {
-                for (int i = 0; i < currentTour.Cards.Count - cardsLenght; i++)
-                {
-                    UICardFight g = Instantiate(cardPrefab, transform).GetComponent<UICardFight>();
-                    cardMaps.Add(g);
-                }
-            }
 
             for (int i = 0; i < cardMaps.Count; i++)
             {
                 cardMaps[i].SetCard(currentTour.Cards[i].basicCard);
-                cardMaps[i].IsPosibleToSelect = false;
                 cardMaps[i].DefaultPosition = transform.position + Vector3.up * distanceBeetwenCards * i;
+                cardMaps[i].StopAllCoroutines();
                 cardMaps[i].LerpToBasicPosition();
             }
+            Debug.Log(cardMaps.Count);
+            Debug.Log(currentTour.Cards.Count);
         }
     }
 }

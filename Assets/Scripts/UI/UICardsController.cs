@@ -35,26 +35,22 @@ namespace UI.Map
         private void UpdateCards()
         {
             int cardsLenght = cardMaps.Count;
-            if (cardsLenght> currentTour.CardSet.cards.Length)
+            for (int i = 0; i < cardsLenght - currentTour.CardSet.cards.Length; i++)
             {
-                for (int i = 0; i < cardsLenght - currentTour.CardSet.cards.Length; i++)
-                {
-                    Destroy(cardMaps[i]);
-                }
-            }
-            if (cardsLenght < currentTour.CardSet.cards.Length)
-            {
-                for (int i = 0; i < currentTour.CardSet.cards.Length-cardsLenght; i++)
-                {
-                    UICardMap g = Instantiate(cardPrefab, transform).GetComponent<UICardMap>();
-                    cardMaps.Add(g);
-                }
+                Destroy(cardMaps[0].gameObject);
+                cardMaps.RemoveAt(0);
             }
 
+            for (int i = 0; i < currentTour.CardSet.cards.Length - cardsLenght; i++)
+            {
+                UICardMap g = Instantiate(cardPrefab, transform).GetComponent<UICardMap>();
+                cardMaps.Add(g);
+            }
+
+            
             for (int i = 0; i < cardMaps.Count; i++)
             {
                 cardMaps[i].SetCard(currentTour.CardSet.cards[i]);
-                cardMaps[i].IsPosibleToSelect = false;
                 cardMaps[i].DefaultPosition = transform.position+Vector3.right*distanceBeetwenCards*i;
                 cardMaps[i].LerpToBasicPosition();
             }

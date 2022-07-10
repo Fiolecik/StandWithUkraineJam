@@ -15,11 +15,6 @@ namespace Game
         {
             get
             {
-                if (teams.Count == 0)
-                {
-                    return null;
-                }
-
                 return teams[currentIdTeam];
             }
         }
@@ -60,6 +55,7 @@ namespace Game
         private void NextTeam()
         {
             currentIdTeam++;
+            Debug.Log("XD");
             if (currentIdTeam >= teams.Count)
             {
                 currentIdTeam = 0;

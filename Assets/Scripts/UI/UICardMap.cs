@@ -8,9 +8,8 @@ using UnityEngine.UI;
 namespace UI
 {
     public class UICardMap : MonoBehaviour
-    {
-        public bool IsPosibleToSelect { get; set; }
-        public Vector3 DefaultPosition { get; set; }
+    { 
+        public Vector3 DefaultPosition { get; set; }=Vector3.zero;
         [SerializeField] public Image cardIcon;
         [SerializeField] public TMP_Text luckyCost;
         [SerializeField] public TMP_Text[] resourcesCost;
@@ -37,7 +36,7 @@ namespace UI
 
         public void SelectCard()
         {
-            if (TourController.Instance.CPU && !IsPosibleToSelect && lerping)
+            if (TourController.Instance.CPU && lerping)
                 return;
 
             if (TourController.Instance.CurrentMoving.SelectedCard == card)
@@ -51,14 +50,16 @@ namespace UI
             if (TourController.Instance.CurrentMoving.SelectedCard == card)
             {
                 followCard = true;
-                StartCoroutine(LerpToPosition(DefaultPosition+Vector3.up*150));
+                transform.position = DefaultPosition + Vector3.up * 150;
+                // StartCoroutine(LerpToPosition(DefaultPosition+Vector3.up*150));
                 StartCoroutine(FollowCard());
             }
         }
 
         public void LerpToBasicPosition()
         {
-            StartCoroutine(LerpToPosition(DefaultPosition));
+            transform.position = DefaultPosition;
+            // StartCoroutine(LerpToPosition(DefaultPosition));
         }
 
         private IEnumerator LerpToPosition(Vector3 position)
