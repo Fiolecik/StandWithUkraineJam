@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cards.Fighting;
 using Game;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,10 @@ namespace UI
         [SerializeField] public TMP_Text[] resourcesCost;
         [SerializeField] public TMP_Text description;
         [SerializeField] public TMP_Text name;
+        [SerializeField] public TMP_Text hp;
+        [SerializeField] public TMP_Text def;
+        [SerializeField] public TMP_Text attack;
+        
 
         private Card card;
         private bool followCard = false;
@@ -32,6 +37,26 @@ namespace UI
 
             description.text = card.description;
             name.text = card.name;
+            var basicCard = card.basicCard;
+            if (basicCard.ActiveTypeCard == ActiveTypeCard.map)
+            {
+                var unit = basicCard as UnitCard;
+                hp.text = unit.Statistics.heal.ToString();
+                def.text = unit.Statistics.def.ToString();
+                attack.text = unit.Statistics.damage.ToString();
+            }
+            if (basicCard.ActiveTypeCard == ActiveTypeCard.friendUnit)
+            {
+                var buff = basicCard as BuffCard;
+                hp.text = buff.Statistics.heal.ToString();
+                def.text = buff.Statistics.def.ToString();
+                attack.text = buff.Statistics.damage.ToString();
+            }
+            if (basicCard.ActiveTypeCard == ActiveTypeCard.enemyUnit)
+            {
+                var attackCard = basicCard as AttackCard;
+                attack.text = attackCard.damage.ToString();
+            }
         }
 
         public void SelectCard()
