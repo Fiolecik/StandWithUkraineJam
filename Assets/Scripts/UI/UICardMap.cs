@@ -38,25 +38,11 @@ namespace UI
             description.text = card.description;
             name.text = card.name;
             var basicCard = card.basicCard;
-            if (basicCard.ActiveTypeCard == ActiveTypeCard.map)
-            {
-                var unit = basicCard as UnitCard;
-                hp.text = unit.Statistics.heal.ToString();
-                def.text = unit.Statistics.def.ToString();
-                attack.text = unit.Statistics.damage.ToString();
-            }
-            if (basicCard.ActiveTypeCard == ActiveTypeCard.friendUnit)
-            {
-                var buff = basicCard as BuffCard;
-                hp.text = buff.Statistics.heal.ToString();
-                def.text = buff.Statistics.def.ToString();
-                attack.text = buff.Statistics.damage.ToString();
-            }
-            if (basicCard.ActiveTypeCard == ActiveTypeCard.enemyUnit)
-            {
-                var attackCard = basicCard as AttackCard;
-                attack.text = attackCard.damage.ToString();
-            }
+            
+                hp.text = basicCard.GetStatistics().heal.ToString();
+                def.text =basicCard.GetStatistics().def.ToString();
+                attack.text = basicCard.GetStatistics().damage.ToString();
+
         }
 
         public void SelectCard()

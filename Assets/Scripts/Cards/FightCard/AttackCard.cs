@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using Fighting;
 using UI;
 using UnityEngine;
@@ -41,6 +42,13 @@ namespace Cards.Fighting
             }
             FightController.Instance.CurrentMoving.RemoveCard(this);
             FightController.Instance.UsedCard();
+        }
+
+        public override Statistics GetStatistics()
+        {
+            var s = new Statistics();
+            s.damage = damage;
+            return s;
         }
     }
 }

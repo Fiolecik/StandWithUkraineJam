@@ -16,11 +16,16 @@ public class UIUnitControllerShower : MonoBehaviour
     private List<UIUnitSketch> baseCards = new List<UIUnitSketch>();
     private List<UIUnitSketch> unitCards = new List<UIUnitSketch>();
 
+    private int baseCount = 0;
+    private int notBaseCount = 0;
+
     void Update()
     {
         var now = TourController.Instance.CurrentMoving;
-        if (now != lastMoved)
+        if (now != lastMoved || now.GetComponent<UnitController>().Cards.Count!=baseCount  || now.SpawnedUnit.GetComponent<UnitController>().Cards.Count!=notBaseCount)
         {
+            baseCount = now.GetComponent<UnitController>().Cards.Count;
+            notBaseCount = now.SpawnedUnit.GetComponent<UnitController>().Cards.Count;
             lastMoved = now;
             ChangeMoved();
         }

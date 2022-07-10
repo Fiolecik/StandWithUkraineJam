@@ -39,5 +39,12 @@ namespace Cards.Fighting
             FightController.Instance.CurrentMoving.RemoveCard(this);
             FightController.Instance.UsedCard();
         }
+        
+        public override Statistics GetStatistics()
+        {
+            var s = new Statistics();
+            s = Statistics;
+            return s;
+        }
     }
 }

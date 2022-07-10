@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Classes;
 using UI;
 using UnityEngine;
 
@@ -23,5 +24,7 @@ namespace Cards.Fighting
         public abstract void SelectCard();
 
         public abstract void CastCard(UICardSlot who);
+
+        public abstract Statistics GetStatistics();
     }
 }
