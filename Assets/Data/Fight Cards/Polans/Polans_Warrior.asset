@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Polans_Warrior
   m_EditorClassIdentifier: 
   name: Polans Warrior
-  description: Polans Warrior
+  description: Melee Unit
   Statistics:
     damage: 10
     heal: 25

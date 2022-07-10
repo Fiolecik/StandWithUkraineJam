@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Protection
   m_EditorClassIdentifier: 
   name: Protection
-  description: Adds a DEF
+  description: Buff
   Statistics:
     damage: 0
     heal: 0

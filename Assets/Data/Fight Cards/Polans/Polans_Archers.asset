@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Polans_Archers
   m_EditorClassIdentifier: 
   name: Polans Archers
-  description: Polans Archers
+  description: Range Unit
   Statistics:
     damage: 25
     heal: 50

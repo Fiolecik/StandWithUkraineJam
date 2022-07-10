@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Veles_Vines
   m_EditorClassIdentifier: 
   name: Veles Vines
-  description: Block a unit and damage it and surrounding unit
+  description: Spell
   luckyCost: 200
   resources: 00000000000000000100000000000000
   icon: {fileID: 21300000, guid: 67ac12cb22aec874586617d038fbf3fe, type: 3}

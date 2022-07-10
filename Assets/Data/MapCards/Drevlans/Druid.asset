@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Druid
   m_EditorClassIdentifier: 
   name: Druid
-  description: Drevlans Druid
+  description: Range/Magic Unit
   luckyCost: 50
   resources: 
   icon: {fileID: 21300000, guid: a2d34f284ab99854ebdf6df67d4281d7, type: 3}
