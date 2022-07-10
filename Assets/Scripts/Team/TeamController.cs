@@ -99,6 +99,8 @@ namespace Team
 
         public void CastCard(Transform who)
         {
+            if (selectedCard == null)
+                return;
             if (!resourcesController.CanRemoveLucky(selectedCard.luckyCost))
                 return;
             for (int i = 0; i < 4; i++)

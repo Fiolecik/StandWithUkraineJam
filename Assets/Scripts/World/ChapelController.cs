@@ -57,7 +57,10 @@ namespace World
 
         public void SetSpecialResource(PlayerResource playerResource)
         {
+            if(currentTeam!=null)
+                currentTeam.ResourcesController.RemoveResource(currentResource, specialResources);
             currentResource = playerResource;
+            currentTeam.ResourcesController.AddResource(currentResource, specialResources);
         }
         
         public void OnTourEnd()

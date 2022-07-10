@@ -108,14 +108,18 @@ namespace Fighting
                 if (topSide[i].UnitCard != null)
                 {
                     topSideArmy++;
+                    Debug.Log("AddedTop");
                 }
+
+                Debug.Log(topSide[i].UnitCard);
             }
 
-            for (int i = 0; i < Fighters[1].Cards.Count; i++)
+            for (int i = 0; i < Fighters[0].Cards.Count; i++)
             {
-                if (Fighters[1].Cards[i].basicCard.ActiveTypeCard == ActiveTypeCard.map)
+                if (Fighters[0].Cards[i].basicCard.ActiveTypeCard == ActiveTypeCard.map)
                 {
                     topSideArmy++;
+                    Debug.Log("AddedTop");
                 }
             }
             
@@ -125,17 +129,23 @@ namespace Fighting
                 if (downSide[i].UnitCard != null)
                 {
                     downSideArmy++;
+                    Debug.Log("AddedBot");
                 }
+                Debug.Log(downSide[i].UnitCard);
             }
 
-            for (int i = 0; i < Fighters[0].Cards.Count; i++)
+            for (int i = 0; i < Fighters[1].Cards.Count; i++)
             {
-                if (Fighters[0].Cards[i].basicCard.ActiveTypeCard == ActiveTypeCard.map)
+                if (Fighters[1].Cards[i].basicCard.ActiveTypeCard == ActiveTypeCard.map)
                 {
                     downSideArmy++;
+                    Debug.Log("AddedBot");
                 }
             }
             
+            Debug.Log(Fighters[1].Cards.Count);
+            Debug.Log(Fighters[0].Cards.Count);
+
             if (topSideArmy <= 0)
             {
                 Fighters[1].LostFight();

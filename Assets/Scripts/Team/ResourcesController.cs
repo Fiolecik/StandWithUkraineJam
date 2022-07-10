@@ -48,7 +48,7 @@ namespace Team
 
         public void AddResource(PlayerResource playerResource, int value)
         {
-            int resId = (int)playerResource;
+            int resId = (int)playerResource-2;
             if (resId < 0)
                 return;
             resources[resId] += value;
@@ -56,7 +56,7 @@ namespace Team
         
         public void RemoveResource(PlayerResource playerResource, int value)
         {
-            int resId = (int)playerResource;
+            int resId = (int)playerResource-2;
             if (resId < 0)
                 return;
             resources[resId] -= value;
