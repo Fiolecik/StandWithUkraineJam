@@ -9,7 +9,7 @@ using UnityEngine;
 public class EntityController : MonoBehaviour, ITourListener
 {
     [SerializeField] private int maxMoves;
-    
+
     private int currentMoves;
     private int currentPosition = 0;
 
