@@ -5265,6 +5265,11 @@ MonoBehaviour:
   specialResources: 0
   isItSpecialChapel: 0
   currentResource: 1
+  fxeffects:
+  - {fileID: 1192677069337410096}
+  - {fileID: 7844936199530082570}
+  - {fileID: 4267818231963642420}
+  - {fileID: 693096852062939957}
 --- !u!65 &703237525
 BoxCollider:
   m_ObjectHideFlags: 0

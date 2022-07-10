@@ -17,11 +17,21 @@ namespace World
 
         [SerializeField] private PlayerResource currentResource;
 
+        [SerializeField] private GameObject[] fxeffects;
+
         private TeamController currentTeam;
 
         private void Awake()
         {
             TourController.Instance.AddTourListener(this);
+        }
+
+        private void Update()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                fxeffects[i].SetActive(i == (((int)currentResource) - 2));
+            }
         }
 
         public void TakeOverControll(TeamController teamController)
