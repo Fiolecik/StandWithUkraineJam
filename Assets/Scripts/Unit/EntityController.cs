@@ -17,10 +17,12 @@ public class EntityController : MonoBehaviour, ITourListener
     private Vector3 currentTarget;
     private bool breakMoving = false;
     private bool coroutineIsRun = false;
+    private LineRenderer lineRenderer;
     private void Awake()
     {
         currentMoves = maxMoves;
         TourController.Instance.AddTourListener(this);
+        lineRenderer = GetComponent<LineRenderer>();
     }
     
     public void SetCurrentTarget(Vector3 position)
@@ -42,10 +44,15 @@ public class EntityController : MonoBehaviour, ITourListener
             currentTarget = position;
             Pathfinding.Instance.FindPath(transform.position, currentTarget);
             currentRoad = Grid.Instance.path;
+            AddPointsToLine();
+            lineRenderer.startColor = Color.red;
+            lineRenderer.endColor = Color.red;
         }
         else
         {
             StartCoroutine(StartMove());
+            lineRenderer.startColor = Color.green;
+            lineRenderer.endColor = Color.green;
         }
     }
 
@@ -67,6 +74,17 @@ public class EntityController : MonoBehaviour, ITourListener
             currentPosition = 0;
     }
 
+    private void AddPointsToLine()
+    {
+        lineRenderer.positionCount = currentRoad.Count;
+        for (int i = 0; i < currentRoad.Count; i++)
+        {
+            lineRenderer.SetPosition(i, currentRoad[i].worldPosition);
+        }
+
+
+    }
+
     private IEnumerator StartMove()
     {
         if (coroutineIsRun)
@@ -80,7 +98,7 @@ public class EntityController : MonoBehaviour, ITourListener
         List<Node> currentRoad = this.currentRoad;
         while (currentMoves>0 && moveIndex<currentRoad.Count)
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
             yield return StartCoroutine(DoMove(currentRoad[moveIndex].worldPosition));
             moveIndex++;
             currentPosition = moveIndex;
@@ -111,10 +129,10 @@ public class EntityController : MonoBehaviour, ITourListener
         while (delta<=1)
         {
             transform.position = Vector3.Lerp(startPosition, moveToPosition, delta);
-            delta += Time.deltaTime;
+            delta += Time.deltaTime*2;
             yield return null;
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
     }
 
     public void OnTourEnd()
