@@ -10,6 +10,7 @@ namespace GameInput
 {
     public class PlayerInput : MonoBehaviour
     {
+        [SerializeField] private GameObject target;
 
         private Vector2Int lastTarget = Vector2Int.zero;
 
@@ -21,6 +22,14 @@ namespace GameInput
                 return;
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rh;
+
+            if (Physics.Raycast(r, out rh))
+            {
+                if (target != null)
+                    target.transform.position = Grid.Instance
+                        .NodeFromWorldPoint(rh.point).worldPosition;
+            }
+
 
             if (Input.GetMouseButtonDown(0))
             {
