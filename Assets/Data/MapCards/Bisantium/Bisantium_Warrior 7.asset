@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Bisantium_Warrior 7
   m_EditorClassIdentifier: 
-  name: Shield Warriors
-  description: Bisantium Warriors
+  name: Bisantium Warrior
+  description: Melee Unit
   luckyCost: 25
   resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 228a8911387ee9e45aebe43b0c7fc0b8, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: eeb1eac06e02b5c44a0022f8d5ea5b36, type: 2}

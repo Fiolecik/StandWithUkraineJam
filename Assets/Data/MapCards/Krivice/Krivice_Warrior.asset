@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Krivice_Warrior
   m_EditorClassIdentifier: 
-  name: Warriors
-  description: Brave Krivice Warriors
+  name: Krivic Warrior
+  description: Melee Unit
   luckyCost: 25
   resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 1770528c3abca684fb860fc898f59370, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: aae09d27ad3f2004bb8284de8e8174a0, type: 2}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Peruns_Wave 2
   m_EditorClassIdentifier: 
   name: Perun's Wave
-  description: Perun's Wave
+  description: Spell
   luckyCost: 200
-  resources: 00000000000000000000000000000000
+  resources: 00000000000000000000000001000000
   icon: {fileID: 21300000, guid: 9533e1960e0875e40a7bed40ac1a9664, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: ae6734757ca6d9543b0ded2e76848233, type: 2}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Polans_Archer 4
   m_EditorClassIdentifier: 
-  name: Archer
-  description: Polans Archers
+  name: Polan's Archers
+  description: Range Unit
   luckyCost: 50
   resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 351fa6f507423af4db768d588f99e9f5, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: 2fe037372ed4a644fad79ef097b8eb5f, type: 2}

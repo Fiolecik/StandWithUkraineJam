@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rusalka
   m_EditorClassIdentifier: 
   name: Rusalka
-  description: Mystican Slavian Creature
+  description: Special Magic Unit
   luckyCost: 400
-  resources: 00000000000000000000000000000000
+  resources: 00000000000000000000000003000000
   icon: {fileID: 21300000, guid: 3f4aee05baf7ea544ab5095f3963695c, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: f5d9b55588cc7e44d80e6d7d2814a2de, type: 2}

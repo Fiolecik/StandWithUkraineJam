@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fa9bb31ca3ec4aa997d03b357a9db, type: 3}
   m_Name: Polans_Warrior 3
   m_EditorClassIdentifier: 
-  name: Warriors
-  description: Brave Polan Warriors
+  name: Polan's Warriors
+  description: Melee Unit
   luckyCost: 25
   resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 1e574b0d79416c542af3046712d2eab0, type: 3}
-  basicCard: {fileID: 0}
+  basicCard: {fileID: 11400000, guid: fa48f6054402a9f459237802beffff21, type: 2}
