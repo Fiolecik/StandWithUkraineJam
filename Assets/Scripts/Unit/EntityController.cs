@@ -23,6 +23,8 @@ public class EntityController : MonoBehaviour, ITourListener
         currentMoves = maxMoves;
         TourController.Instance.AddTourListener(this);
         lineRenderer = GetComponent<LineRenderer>();
+        if (lineRenderer == null)
+            lineRenderer= gameObject.AddComponent<LineRenderer>();
     }
     
     public void SetCurrentTarget(Vector3 position)
