@@ -64,6 +64,13 @@ namespace Team
             entityController = g.GetComponent<EntityController>();
             g.GetComponent<UnitController>().TeamParrent = this;
             GetComponent<UnitController>().TeamParrent = this;
+            if (spawn == null)
+                spawn = transform;
+        }
+
+        private void OnDestroy()
+        {
+            TourController.Instance.RemoveTeam(this);
         }
 
         public void SelectCard(Card card)

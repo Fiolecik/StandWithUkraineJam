@@ -100,12 +100,13 @@ namespace Team
 
         public void DestroyBase()
         {
-            
+            Destroy(gameObject);
+            Destroy(TeamParrent.SpawnedUnit.gameObject);
         }
 
         public void RespawnUnit()
         {
-            
+            transform.position = TeamParrent.Spawn.position;
         }
         
     }
