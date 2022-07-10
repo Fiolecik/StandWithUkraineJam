@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Striga
   description: Mystican Slavian Creature
   luckyCost: 400
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 9de0a95b4403ee74d85ffaf0ad3e80d4, type: 3}
   basicCard: {fileID: 0}

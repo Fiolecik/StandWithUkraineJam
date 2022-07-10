@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Rusalka
   description: Mystican Slavian Creature
   luckyCost: 400
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 3f4aee05baf7ea544ab5095f3963695c, type: 3}
   basicCard: {fileID: 0}

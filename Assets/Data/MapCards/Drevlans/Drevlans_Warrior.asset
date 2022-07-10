@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Warriors
   description: Brave Drevlan Warriors
   luckyCost: 25
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: c89c19d20cd22f4459afcdf5d167124e, type: 3}
   basicCard: {fileID: 0}

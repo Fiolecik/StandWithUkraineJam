@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cards.Fighting;
@@ -8,6 +9,16 @@ namespace Game
     [CreateAssetMenu(fileName = "Map Card", menuName = "Cards/Map card")]
     public class Card : ScriptableObject
     {
+        private void OnEnable()
+        {
+            if (basicCard != null)
+            {
+                basicCard.description = description;
+                basicCard.name = name;
+                basicCard.sprite = icon;
+            }
+        }
+
         public string name;
         public string description;
         public int luckyCost;

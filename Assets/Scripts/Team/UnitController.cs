@@ -8,17 +8,29 @@ using UnityEngine.Events;
 
 namespace Team
 {
+    
     public class UnitController : MonoBehaviour
     {
+        public class CardHolder
+        {
+            public int countOfCards;
+            public BasicCard basicCard;
+
+            public CardHolder(int i, BasicCard c)
+            {
+                countOfCards = i;
+                basicCard = c;
+            }
+        }
         [SerializeField] private MeshRenderer higlight;
         public UnityEvent OnLoseFight = new UnityEvent();
         public TeamController TeamParrent { get; set; }
-        public List<BasicCard> Cards
+        public List<CardHolder> Cards
         {
             get => cards;
         }
         
-        private List<BasicCard> cards = new List<BasicCard>();
+        private List<CardHolder> cards = new List<CardHolder>();
 
         private void Start()
         {
@@ -28,7 +40,26 @@ namespace Team
 
         public void AddCard(BasicCard basicCard)
         {
-            cards.Add(Instantiate(basicCard));
+            int id = cards.FindIndex(ctg => ctg.basicCard == basicCard);
+            if (id == -1)
+            {
+                cards.Add(new CardHolder(0, basicCard));
+                id = cards.Count - 1;
+            }
+
+            cards[id].countOfCards++;
+        }
+
+        public void RemoveCard(BasicCard basicCard)
+        {
+            int id = cards.FindIndex(ctg => ctg.basicCard == basicCard);
+            if (id == -1)
+                return;
+            cards[id].countOfCards--;
+            if (cards[id].countOfCards <= 0)
+            {
+                cards.RemoveAt(id);
+            }
         }
 
         public void LostFight()

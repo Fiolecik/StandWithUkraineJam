@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Classes;
+using Fighting;
+using UI;
 using UnityEngine;
 
 namespace Cards.Fighting
@@ -9,14 +11,23 @@ namespace Cards.Fighting
     public class BuffCard : BasicCard
     {
         public Statistics Statistics;
+        
+        private void Awake()
+        {
+            ActiveTypeCard = ActiveTypeCard.friendUnit;
+        }
         public override void SelectCard()
         {
-            throw new System.NotImplementedException();
+            FightController.Instance.SelectCard(this);
         }
 
-        public override void CastCard(Transform who)
+        public override void CastCard(UICardSlot who)
         {
-            throw new System.NotImplementedException();
+            if (who.UnitCard==null)
+                return;
+            who.UnitCard.Statistics += Statistics;
+            FightController.Instance.CurrentMoving.RemoveCard(this);
+            FightController.Instance.UsedCard();
         }
     }
 }

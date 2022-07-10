@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Water Enchantment
   description: Upgrades DEF of the unit
   luckyCost: 350
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 3cc718da632f6d546a91cd58cfa310f5, type: 3}
   basicCard: {fileID: 0}

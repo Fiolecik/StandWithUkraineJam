@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Harpooners
   description: Krivice Harpooners
   luckyCost: 50
-  resources: 
+  resources: 00000000000000000000000000000000
   icon: {fileID: 21300000, guid: 74a6dbbf74b08bf4baade21337c328f3, type: 3}
   basicCard: {fileID: 0}

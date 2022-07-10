@@ -103,6 +103,10 @@ namespace Team
             }
 
             resourcesController.RemoveLucky(selectedCard.luckyCost);
+            var basicCard = selectedCard.basicCard;
+            basicCard.name = selectedCard.name;
+            basicCard.description = selectedCard.description;
+            basicCard.sprite = selectedCard.icon;
             who.GetComponent<UnitController>().AddCard(selectedCard.basicCard);
             selectedCard = null;
             OnTeamChangedCard.Invoke();
