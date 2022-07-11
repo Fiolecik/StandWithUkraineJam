@@ -52,7 +52,8 @@ namespace UI.Map
             {
                 cardMaps[i].SetCard(currentTour.CardSet.cards[i]);
                 cardMaps[i].DefaultPosition = transform.position+Vector3.right*distanceBeetwenCards*i;
-                cardMaps[i].LerpToBasicPosition();
+                cardMaps[i].transform.position = transform.position + Vector3.right * distanceBeetwenCards * i;
+                // cardMaps[i].LerpToBasicPosition();
             }
         }
     }

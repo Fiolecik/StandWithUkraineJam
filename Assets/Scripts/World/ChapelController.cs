@@ -17,11 +17,21 @@ namespace World
 
         [SerializeField] private PlayerResource currentResource;
 
+        [SerializeField] private GameObject[] fxeffects;
+
         private TeamController currentTeam;
 
         private void Awake()
         {
             TourController.Instance.AddTourListener(this);
+        }
+
+        private void Update()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                fxeffects[i].SetActive(i == (((int)currentResource) - 2));
+            }
         }
 
         public void TakeOverControll(TeamController teamController)
@@ -47,7 +57,10 @@ namespace World
 
         public void SetSpecialResource(PlayerResource playerResource)
         {
+            if(currentTeam!=null)
+                currentTeam.ResourcesController.RemoveResource(currentResource, specialResources);
             currentResource = playerResource;
+            currentTeam.ResourcesController.AddResource(currentResource, specialResources);
         }
         
         public void OnTourEnd()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fighting;
 using Game;
 using Other;
 using Team;
@@ -100,7 +101,7 @@ namespace Unit
 
         public void Attack()
         {
-            
+            FightController.Instance.StartFight(unitController, atackTarget);
         }
 
         public void TakeOverControll()

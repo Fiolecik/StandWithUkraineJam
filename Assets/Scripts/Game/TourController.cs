@@ -68,6 +68,8 @@ namespace Game
                     VARIABLE.OnTourEnd();
                 }
             }
+
+            Camera.main.transform.position = CurrentMoving.SpawnedUnit.transform.position;
         }
     }
 }

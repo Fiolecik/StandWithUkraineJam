@@ -53,9 +53,6 @@ namespace UI
 
         public void SelectCard()
         {
-            if (TourController.Instance.CPU && lerping)
-                return;
-
             if (TourController.Instance.CurrentMoving.SelectedCard == card)
             {
                 LerpToBasicPosition();

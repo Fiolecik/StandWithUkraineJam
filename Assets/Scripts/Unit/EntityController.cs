@@ -101,9 +101,10 @@ public class EntityController : MonoBehaviour, ITourListener
         while (currentMoves>0 && moveIndex<currentRoad.Count)
         {
             yield return new WaitForSeconds(0.1f);
-            yield return StartCoroutine(DoMove(currentRoad[moveIndex].worldPosition));
+            yield return StartCoroutine(DoMove(currentRoad[0].worldPosition));
             moveIndex++;
             currentPosition = moveIndex;
+            currentRoad.RemoveAt(0);
             currentMoves--;
             if (breakMoving)
                 break;
